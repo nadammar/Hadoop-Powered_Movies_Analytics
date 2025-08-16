@@ -6,10 +6,7 @@ This project demonstrates how to use **Hadoop MapReduce (Streaming with Python 3
 
 ## 📂 Dataset
 
-The project uses the **MovieLens** dataset containing two files:
-
-1. **movies.csv** – movieId, title, genres
-2. **ratings.csv** – userId, movieId, rating, timestamp
+The dataset used in this project is the **[MovieLens 25M Dataset](https://grouplens.org/datasets/movielens/25m)** provided by GroupLens. 
 
 
 ## Technologies Used
