@@ -21,41 +21,23 @@ The project uses the **MovieLens** dataset containing two files:
 
 ---
 
-## MapReduce Applications
 
-### 1️⃣ **Average Movie Ratings**
+## 🗂 MapReduce Applications
 
-* **Objective:** Calculate the average rating for each movie.
-* **Mapper:** Emits `(movieId, rating)`
-* **Reducer:** Aggregates ratings and outputs average.
+* 1️⃣ **Average Movie Ratings**
+* 2️⃣ **Top 20 Movies by Rating (with Titles)**
+* 3️⃣ **Highest Rated Movies for Each Genre**
+* 4️⃣ **The Average Rating for Each Film per Genre**
 
-### 2️⃣ **Top 20 Movies by Rating**
-
-* **Objective:** Get the top 20 movies with the highest average ratings.
-* **Mapper:** Emits `(movieId, rating)`
-* **Reducer:** Calculates average rating and sorts top 20.
-
-### 3️⃣ **Top 10 Movies per Genre**
-
-* **Objective:** Identify the top 10 rated movies within each genre.
-* **Mapper:** Joins `movies.csv` and `ratings.csv` by movieId and emits `(genre, movieId, rating)`.
-* **Reducer:** Groups by genre, computes average ratings, and selects top 10.
-
-### 4️⃣ **Unique Ratings Distribution per Movie**
-
-* **Objective:** List each movie and its unique ratings received.
-* **Mapper:** Emits `(movieId, rating)`
-* **Reducer:** Aggregates unique ratings and outputs distribution.
+👉 More details about these applications, including methodology, code, and results, are explained in the PDF file **“Hadoop\_Movie\_Analytics\_Report.pdf”** (included in the project).
 
 ---
 
-## 📊 Power BI Dashboard
+## 📊 Power BI Visualizations
 
-The output data from Hadoop MapReduce is visualized in **Power BI** to create actionable dashboards:
+The output data from Hadoop MapReduce is visualized in **Power BI** through a set of meaningful charts and reports, helping to better understand trends and insights from the movie dataset.
 
-* Genre-based performance
-* Trends by year
-* Highest and lowest rated movies
+
 
 ---
 
@@ -76,13 +58,13 @@ The output data from Hadoop MapReduce is visualized in **Power BI** to create ac
    -mapper "python3 mapper.py" \
    -reducer "python3 reducer.py" \
    -input /user/root/input/ratings.csv \
-   -output /user/hadoop/output/project_name
+   -output /user/hadoop/output/Hadoop-Powered_Movies_Analytics
    ```
 
 3. **View Results:**
 
    ```bash
-   hadoop fs -cat /user/hadoop/output/project_name/part-00000
+   hadoop fs -cat /user/hadoop/output/Hadoop-Powered_Movies_Analytics/part-00000
    ```
 
 4. **Load Results into Power BI** for visualization.
